@@ -71,7 +71,6 @@ def build_company_index() -> List[Dict[str, Any]]:
             if simplified_eng and simplified_eng.lower() != eng.lower():
                 aliases.add(simplified_eng)
 
-        # 필요하면 숫자 티커도 alias로:
         numeric_ticker = "".join(ch for ch in ticker if ch.isdigit())
         if numeric_ticker:
             aliases.add(numeric_ticker)
@@ -87,7 +86,7 @@ def build_company_index() -> List[Dict[str, Any]]:
                 "ticker": ticker,
                 "exchange": row.get("exchange"),
                 "corp_code": row.get("corp_code"),
-                "raw": row,  # 원본 전체 레코드
+                "raw": row,  
                 "aliases": sorted(aliases, key=len, reverse=True),  # 길이 긴 것부터
             }
         )
@@ -108,7 +107,7 @@ def build_company_index() -> List[Dict[str, Any]]:
         if symbol:
             aliases.add(symbol)
 
-        aliases = {a for a in aliases if a}  # 빈 문자열 제거
+        aliases = {a for a in aliases if a}  
 
         if not aliases:
             continue
@@ -135,7 +134,6 @@ def extract_companies_from_news(text: str, company_index: List[Dict[str, Any]]) 
     """
     results = []
 
-    # 소문자화 (한글엔 영향 없음)
     text_norm = text.lower()
 
     for comp in company_index:

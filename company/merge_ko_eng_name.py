@@ -2,7 +2,6 @@ import json
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 
-# 파일 경로는 네 환경에 맞게 수정해줘
 LISTED_JSON_PATH = Path("listed_companies_korea.json")
 DART_JSON_PATH = Path("dart_corp_code.json")
 OUTPUT_JSON_PATH = Path("corp_merged.json")
