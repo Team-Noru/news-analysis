@@ -2,3 +2,6 @@
 __pycache__/
 *.txt
 output/
+.github/
+*.xls
+*.json
