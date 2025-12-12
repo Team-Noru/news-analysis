@@ -126,9 +126,7 @@ def main():
 
             if total_cnt >= 1:
                 if not found_any_for_corp:
-                    print("\n==============================")
                     print(f"{corp_name} ({corp_code})")
-                    print("==============================")
                     found_any_for_corp = True
 
                 print(f"- {year}: 전체 {total_cnt}건 (제3자배정 {third_cnt}건)")
